@@ -13,6 +13,7 @@
 		2733216E2090E17300A9D607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2733216D2090E17300A9D607 /* Assets.xcassets */; };
 		273321712090E17300A9D607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2733216F2090E17300A9D607 /* LaunchScreen.storyboard */; };
 		273321742090E17300A9D607 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 273321732090E17300A9D607 /* main.m */; };
+		2733217C2090E53A00A9D607 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2733217B2090E53A00A9D607 /* PhotoCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		273321702090E17300A9D607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		273321722090E17300A9D607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		273321732090E17300A9D607 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2733217A2090E53A00A9D607 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		2733217B2090E53A00A9D607 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				273321672090E17300A9D607 /* ViewController.h */,
 				273321682090E17300A9D607 /* ViewController.m */,
 				2733216A2090E17300A9D607 /* Main.storyboard */,
+				2733217A2090E53A00A9D607 /* PhotoCollectionViewCell.h */,
+				2733217B2090E53A00A9D607 /* PhotoCollectionViewCell.m */,
 				2733216D2090E17300A9D607 /* Assets.xcassets */,
 				2733216F2090E17300A9D607 /* LaunchScreen.storyboard */,
 				273321722090E17300A9D607 /* Info.plist */,
@@ -143,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				273321692090E17300A9D607 /* ViewController.m in Sources */,
+				2733217C2090E53A00A9D607 /* PhotoCollectionViewCell.m in Sources */,
 				273321742090E17300A9D607 /* main.m in Sources */,
 				273321662090E17300A9D607 /* AppDelegate.m in Sources */,
 			);
