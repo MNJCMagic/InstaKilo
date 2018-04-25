@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSMutableArray<NSMutableArray<UIImage*>*>* images;
 @property (nonatomic, strong) NSMutableArray* firstImages;
 @property (nonatomic, strong) NSMutableArray* secondImages;
+@property (nonatomic) UILongPressGestureRecognizer *longPressRecognizer;
 @end
 
 @implementation ViewController
@@ -41,14 +42,21 @@
     self.secondImages = secondImages;
     self.images = firstImages;
     
+    //long press
+    UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(wasLongPressed:)];
+    self.longPressRecognizer = longPressRecognizer;
+    [self.collectionView addGestureRecognizer:longPressRecognizer];
+    
 }
+
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 2;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return [self.images objectAtIndex:section].count;
+//    return 5;
 }
 
 
@@ -65,6 +73,7 @@
     cell.imageView.clipsToBounds = YES;
 //    CGSize size = cell.bounds.size;
     [cell addSubview:cell.imageView];
+
     return cell;
 }
 
@@ -91,5 +100,17 @@
     }
     [self.collectionView reloadData];
 }
-
+-(IBAction)wasLongPressed:(UILongPressGestureRecognizer*)sender {
+    NSLog(@"long press");
+    CGPoint point = [sender locationInView:sender.view];
+    NSIndexPath *path = [self.collectionView indexPathForItemAtPoint:point];
+    NSLog(@"%@", path);
+    NSInteger section = path.section;
+    NSInteger item = path.item;
+    [[self.images objectAtIndex:section] removeObjectAtIndex:item];
+    NSArray *array = [[NSArray alloc] initWithObjects:path, nil];
+    [self.collectionView deleteItemsAtIndexPaths:array];
+//    [self.images removeObjectAtIndex:[self.images objectAtIndex:[section][item]];
+    
+}
 @end
